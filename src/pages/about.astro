@@ -1,0 +1,47 @@
+---
+const pageTitle = "Sobre mi";
+const identidad = {
+  nombre: "Eva",
+  pais: "España",
+  ocupacion: "mis labores",
+  hobbies: ["fotografia", "observación de aves", "correr despacio"],
+};
+const habilidades = ["HTML", "CSS", "JS"];
+const happy = true;
+const finalizado = false;
+const goal = 3;
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <h1>{pageTitle}</h1>
+    <a href='/'>INICIO</a>
+    <a href='/about/'>ABOUT ME</a>
+    <a href='/blog/'>BLOG</a>
+    <h1>Hello, I’m {identidad.nombre} Cebrián. 👋</h1>
+    <p>Vivo en {identidad.pais} y trabajo {identidad.ocupacion}</p>
+    <p>
+      {
+        identidad.hobbies.length >= 2 && (
+          <li>
+            Dos de mis aficiones son: {identidad.hobbies[0]} y
+            {identidad.hobbies[1]}
+          </li>
+        )
+      }
+      <p>Mis habilidades son:</p>
+
+      {habilidades.map((v) => <li> {v}</li>)}
+    </p>
+    {happy && <p>estoy contenta</p>}
+    {finalizado && <p>He finalizado</p>}
+    {goal === 3 && <p>Mi objetivo es terminar en 3 días</p>}
+  </body>
+</html>
