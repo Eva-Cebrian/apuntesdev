@@ -1,19 +1,13 @@
+---
+const { headings, contents } = Astro.props;
+---
+
 <div class='tabs'>
   <ul class='tabs-header'>
-    <li class='default-tab'>LO MAS DIFICIL</li>
-    <li>LO MAS FÁCIL</li>
-    <li>LO QUE MAS ME HA GUSTADO</li>
+    {headings.map((heading) => <li>{heading}</li>)}
   </ul>
   <ul class='tabs-content'>
-    <li class='tab'>
-      <code>$ npm create astro@latest</code>
-    </li>
-    <li class='tab'>
-      <code>$ pnpm create astro@latest</code>
-    </li>
-    <li class='tab'>
-      <code>$ yarn create astro</code>
-    </li>
+    {contents.map((content) => <li class='tab'>{content}</li>)}
   </ul>
 </div>
 

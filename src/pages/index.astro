@@ -12,23 +12,36 @@ import Tabs from "../components/Tabs.astro";
     <div class='container'>
       <h2>Cómo está construido este blog?</h2>
       <p>
-        Este blog está construido a partir del tutorial de Brad Traversy en
-        YouTube: <a
+        Este blog está construido con ASTRO. Me he basado en un tutorial de Brad
+        Traversy de YouTube titulado: <a
           href='https://www.youtube.com/watch?v=Oi9z5gfIHJs&list=PL_m1oFtlCNtTwN1fe9-kR7-yNKdCU5gXd'
           ><span>Astro Crash Course</span></a
         >
       </p>
       <!-- Tabs -->
-      <Tabs />
+      <Tabs
+        headings={[
+          "LO QUE + ME GUSTA DE ASTRO      ",
+          "LO QUE - ME GUSTA DE ASTRO      ",
+          "LO + INTERESANTE DE ASTRO",
+          "TIP SOBRE ASTRO Y EMMET",
+        ]}
+        contents={[
+          "Lo que más me gusta de Astro es que me recuerda a los micro frontends, pero en este caso, los 'micro fronteds' son los componentes. No sé, pero me parece increíble que tengas la posibilidad de mezclar otras tecnologías dentro de él. Los micro frontends son pequeñas aplicaciones web en diferentes frameworks o tecnologías integradas en una gran aplicación web y por eso Astro me recuerda a los micro frontends y me encanta, especialmente la forma moderna de hacer cosas... tienes componentes separados, etc. También es genial cuando quieres trabajar con un amigo que usa una tecnología o pila diferente o incluso tal vez no le gusten algunas herramientas que estás usando, así que aún puedes de alguna manera cooperar juntos cada uno en su propia pila y hacer que funcione, obviamente puede ser complicado, pero esta es la posibilidad y me encanta.",
+          "Una de las desventajas de Astro que algunos desarrolladores pueden encontrar es su relativa novedad en el ecosistema de desarrollo web. Esto implica que, comparado con frameworks más establecidos como React o Vue, puede haber menos recursos de aprendizaje disponibles, como tutoriales detallados o soluciones a problemas comunes. ",
+          "Uno de los aspectos más interesantes de Astro es su capacidad para realizar renderización en islas. Este enfoque permite a los desarrolladores construir su sitio web utilizando múltiples frameworks de UI en un mismo proyecto, pero de manera que cada componente se carga de forma independiente, sólo cuando el usuario lo necesita. Esto no solo optimiza la carga inicial de la página al reducir el JavaScript enviado al navegador, sino que también mejora la interactividad y la velocidad percibida del sitio.",
+          'Para que Emmet funcione en archivos .astro (o en cualquier otro), solo añade \\"emmet.includeLanguages\\": {\\"astro\\": \\"html\\"} a tu settings.json.',
+        ]}
+      />
 
-      <h3>Start Building</h3>
+      <h3>
+        De vuelta a lo básico: cómo JavaScript nos está llevando de regreso a
+        las páginas estáticas
+      </h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum
-        deserunt inventore ut voluptate, officia maiores repellat tenetur
-        praesentium omnis est ex tempora a necessitatibus reiciendis at et
-        dignissimos. Ipsam eius consequuntur cupiditate aperiam porro, esse
-        laborum impedit nesciunt ut voluptatum assumenda aspernatur libero iusto
-        error molestias dolorum, necessitatibus labore?
+        La vida es extraña... Huíamos de los sitios estáticos en los años 2000,
+        ahora usamos el poder de JavaScript para eliminar JavaScript y volver a
+        las páginas estáticas... y resulta que es lo mejor de lo mejor!
       </p>
     </div>
   </section>

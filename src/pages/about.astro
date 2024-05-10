@@ -1,47 +1,97 @@
 ---
-const pageTitle = "Sobre mi";
-const identidad = {
-  nombre: "Eva",
-  pais: "España",
-  ocupacion: "mis labores",
-  hobbies: ["fotografia", "observación de aves", "correr despacio"],
-};
-const habilidades = ["HTML", "CSS", "JS"];
-const happy = true;
-const finalizado = false;
-const goal = 3;
+import Layout from "../layouts/Layout.astro";
+
+import logos from "../images/deploy-logos.png";
+import logosSmall from "../images/deploy-logos-small.png";
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <h1>{pageTitle}</h1>
-    <a href='/'>INICIO</a>
-    <a href='/about/'>ABOUT ME</a>
-    <a href='/blog/'>BLOG</a>
-    <h1>Hello, I’m {identidad.nombre} Cebrián. 👋</h1>
-    <p>Vivo en {identidad.pais} y trabajo {identidad.ocupacion}</p>
-    <p>
-      {
-        identidad.hobbies.length >= 2 && (
-          <li>
-            Dos de mis aficiones son: {identidad.hobbies[0]} y
-            {identidad.hobbies[1]}
-          </li>
-        )
-      }
-      <p>Mis habilidades son:</p>
+<Layout title='About ApuntesDev'>
+  <section class='page-content'>
+    <div class='container'>
+      <h2>De qué va esto?</h2>
+      <h3>
+        Hola, soy Eva Cebrián y te doy la bienvenida a "ApuntesDev", mi diario
+        personal de aprendizaje en el mundo de la programación.
+      </h3>
 
-      {habilidades.map((v) => <li> {v}</li>)}
-    </p>
-    {happy && <p>estoy contenta</p>}
-    {finalizado && <p>He finalizado</p>}
-    {goal === 3 && <p>Mi objetivo es terminar en 3 días</p>}
-  </body>
-</html>
+      <p>
+        A pesar de llevar poco tiempo en este campo, he decidido documentar y
+        compartir cada paso de mi viaje. Este blog se centra en dejar apuntes
+        detallados sobre los tutoriales, libros, cursos y cualquier otro recurso
+        educativo que voy explorando mientras aprendo a programar.
+      </p>
+
+      <div class='card'>
+        <h3>Lo que no se escribe se olvida</h3>
+        <p>
+          Programar no solo implica escribir líneas de código; también requiere
+          aprender constantemente nuevas tecnologías, métodos y soluciones a
+          problemas complejos. Sin embargo, a medida que avanzamos y enfrentamos
+          nuevos desafíos, es fácil olvidar detalles cruciales de lo que
+          aprendimos en el pasado.
+        </p>
+        <p>
+          Así, al escribir regularmente sobre lo que aprendemos y
+          experimentamos, no solo evitamos que el conocimiento se disipe con el
+          tiempo, sino que también construimos un recurso valioso tanto para
+          nuestro futuro yo como para la comunidad de desarrolladores en
+          general. En resumen, en el desarrollo de software, escribir no es solo
+          una tarea; es una inversión en nuestro futuro profesional y en el de
+          aquellos que podrían beneficiarse de nuestras experiencias.
+        </p>
+      </div>
+
+      <h3>Un espacio para inspirar</h3>
+      <img class='logos' src={logos.src} alt='' />
+      <img class='logos-small' src={logosSmall.src} alt='' />
+      <p>
+        Mi objetivo es crear una bitácora que no solo me sirva para reforzar lo
+        aprendido, sino que también pueda ayudar a otros que estén empezando en
+        este emocionante camino. En "ApuntesDev", encontrarás resúmenes, puntos
+        clave, dificultades encontradas y soluciones a problemas que he
+        enfrentado. Este enfoque práctico y transparente pretende proporcionar
+        una visión realista y útil sobre cómo se desarrolla el aprendizaje en
+        programación. Espero que este espacio te inspire y te sea útil tanto
+        como a mí, y te invito a acompañarme en este proceso de crecimiento y
+        descubrimiento.
+      </p>
+
+      <h3>Join our Community</h3>
+      <p>
+        Join us in the Astro Discord to share with and get help from an active,
+        friendly community!
+      </p>
+
+      <ul>
+        <li>💬 Say hi in our #introduce-yourself channel!</li>
+        <li>
+          💬 Ask our Support Squad a question in our #support-threads channel!
+        </li>
+        <li>💬 Share what you've been working on in our #showcase channel!</li>
+      </ul>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  <style > .features .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+
+  .card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  @media (max-width: 500px) {
+    .features .container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
