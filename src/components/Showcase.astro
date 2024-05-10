@@ -5,10 +5,12 @@ import logosSmall from "../images/framework-logos-small.png";
 export interface Props {
   heading?: string;
   text?: string;
+  showExtra?: boolean;
 }
 const {
   heading = "Bienvenido a mi pequeño diario de apuntes DEV!",
   text = "Apuntes Dev de cosas que voy probando y quiero dejar apuntadas en algun lugar",
+  showExtra = false,
 } = Astro.props as Props;
 ---
 
@@ -19,14 +21,20 @@ const {
       {text}
     </p>
   </div>
-  <div class='showcase-img'>
-    <img class='logos' src={logos.src} alt='' />
-    <img class='logos-small' src={logosSmall.src} alt='' />
-  </div>
+  {
+    showExtra && (
+      <>
+        <div class='showcase-img'>
+          <img class='logos' src={logos.src} alt='' />
+          <img class='logos-small' src={logosSmall.src} alt='' />
+        </div>
 
-  <p class='showcase-demo'>
-    <small>Apuntes sobre CSS, JS, PHP y frameworks varios</small>
-  </p>
+        <p class='showcase-demo'>
+          <small>Apuntes sobre CSS, JS, PHP y frameworks varios</small>
+        </p>
+      </>
+    )
+  }
 </section>
 
 <style>
