@@ -1,24 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Showcase from "../components/Showcase.astro";
 
 import logos from "../images/deploy-logos.png";
 import logosSmall from "../images/deploy-logos-small.png";
 ---
 
 <Layout title='About ApuntesDev'>
+  <Showcase
+    heading='Hola Mundo!'
+    text='Soy Eva Cebrián y te doy la bienvenida a "ApuntesDev", mi diario personal de aprendizaje en el mundo de la programación. '
+  />
   <section class='page-content'>
     <div class='container'>
-      <h2>De qué va esto?</h2>
-      <h3>
-        Hola, soy Eva Cebrián y te doy la bienvenida a "ApuntesDev", mi diario
-        personal de aprendizaje en el mundo de la programación.
-      </h3>
-
+      <h3>De qué va esto?</h3>
       <p>
         A pesar de llevar poco tiempo en este campo, he decidido documentar y
-        compartir cada paso de mi viaje. Este blog se centra en dejar apuntes
-        detallados sobre los tutoriales, libros, cursos y cualquier otro recurso
-        educativo que voy explorando mientras aprendo a programar.
+        compartir cada paso de mi viaje dev.
+      </p>
+      <p>
+        Este blog se centra en dejar apuntes detallados y/o superfluos sobre los
+        tutoriales, libros, cursos y cualquier otro recurso educativo que voy
+        explorando mientras aprendo a programar.
       </p>
 
       <div class='card'>
@@ -34,10 +37,8 @@ import logosSmall from "../images/deploy-logos-small.png";
           Así, al escribir regularmente sobre lo que aprendemos y
           experimentamos, no solo evitamos que el conocimiento se disipe con el
           tiempo, sino que también construimos un recurso valioso tanto para
-          nuestro futuro yo como para la comunidad de desarrolladores en
-          general. En resumen, en el desarrollo de software, escribir no es solo
-          una tarea; es una inversión en nuestro futuro profesional y en el de
-          aquellos que podrían beneficiarse de nuestras experiencias.
+          nuestro futuro yo, como para la comunidad de desarrolladores en
+          general.
         </p>
       </div>
 
@@ -56,19 +57,12 @@ import logosSmall from "../images/deploy-logos-small.png";
         descubrimiento.
       </p>
 
-      <h3>Join our Community</h3>
+      <h3>Visita mi Github</h3>
       <p>
-        Join us in the Astro Discord to share with and get help from an active,
-        friendly community!
+        Si te interesa ver los proyectos en los que he estado trabajando, te
+        invito a visitar mi perfil de GitHub. Allí encontrarás una variedad de
+        repositorios que reflejan mi experiencia y pasión por la programación.
       </p>
-
-      <ul>
-        <li>💬 Say hi in our #introduce-yourself channel!</li>
-        <li>
-          💬 Ask our Support Squad a question in our #support-threads channel!
-        </li>
-        <li>💬 Share what you've been working on in our #showcase channel!</li>
-      </ul>
     </div>
   </section>
 </Layout>
